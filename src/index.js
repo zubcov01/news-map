@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from './App/App.jsx';
+import PinsContext from './context';
+function Main() {
 
-ReactDOM.render(
+  const [pins, setPins] = useState([]);
+return(
   <React.StrictMode>
+  <PinsContext.Provider value={{ pins, setPins }}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      </PinsContext.Provider>
+  </React.StrictMode>
+ );
+}
+ReactDOM.render(<Main/>, document.getElementById('root'));
+  
