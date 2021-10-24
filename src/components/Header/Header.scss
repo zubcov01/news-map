@@ -13,14 +13,17 @@
     }
     &__item{
         list-style: none;
-        padding: 3px 12px;
-        &:hover{
-            background-color: rgb(213, 213, 255);
-        }
+       
     }
     &__link{
         color: white;
         text-decoration: none;
         font-size: 18px;
+        padding: 3px 12px;
+        &:hover{
+            background-color: rgb(213, 213, 255);
+            color: black;
+            transition: 0.3s;
+        }
     }
 }
